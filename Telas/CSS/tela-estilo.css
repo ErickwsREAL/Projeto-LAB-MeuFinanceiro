@@ -54,13 +54,30 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     padding: 10px;
     background:white;
 }
-
 #center{
     text-align: center;
     margin-bottom:20px
 }
-
 .readonlys{
     border: white;
     background: white;
+}
+.bt-salvar{
+    display:inline; 
+    float:right; 
+    padding:9px; 
+    margin-bottom:15px; 
+    margin-right:15px
+}
+.bt-deletar-s{
+    display:inline; 
+    float:right; 
+    padding:9px; 
+    margin-left:20px; 
+    margin-right:15px
+}
+.bt-alterar-s{
+    display:inline; 
+    float:right; 
+    padding:9px
 }

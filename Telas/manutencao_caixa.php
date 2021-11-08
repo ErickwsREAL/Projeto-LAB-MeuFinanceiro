@@ -13,7 +13,7 @@
 	    <script src="js/jquery-ui.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        </head>
+    </head>
     <body>
         <div class="d-flex wrapper wrapper-navbar-used wrapper-navbar-fixed">
             <!-- Sidebar Holder -->
@@ -24,13 +24,13 @@
                 <ul class="list-unstyled components">
                     <p>Usuário: Blá</p>
                     <li>
-                        <a href="#">Categorias e Subcategorias</a>
+                        <a href="./categoria_subcategoria.php">Categorias e Subcategorias</a>
                     </li>
                     <li>
-                        <a href="#">Bancos e Contas</a>
+                        <a href="./manutencao_caixa.php">Bancos e Contas</a>
                     </li>                    
                     <li>
-                        <a href="#">Movimentações</a>
+                        <a href="./movimentacoes.php">Movimentações</a>
                     </li>
                     <li>
                         <a href="#">Orçamentos</a>
@@ -88,7 +88,7 @@
 
                                                 <label for="saldo"> Id Caixa: </label>
                                                 <input type="text" class="form-control" id="id_caixa" name="id_caixa" size="10" value="" step="1" style="width:5%; display:inline" readonly> 
-                                                <button type="submit" class="btn btn-primary" style="display:inline; float:right; background:green; border: green; padding:9px; margin-bottom:15px">Salvar</button>
+                                                <button type="submit" class="btn btn-success bt-salvar" >Salvar</button>
                                             </div>
                                         </form>
                                     </div>
@@ -110,7 +110,7 @@
                                             <label for="id_carteira" class="col-sm-2 col-form-label">Id Saldo:  </label>
                                             <div class="col-sm-10">
                                                 <input type="text" readonly class="form-control-plaintext readonlys" id="id_carteira" value="1">
-                                                <button type="submit" class="btn btn-primary" style="display:inline; float:right; background:#5f725f; border: #5f725f; padding:9px">Alterar</button>
+                                                <button type="submit" class="btn btn-secondary" style="display:inline; float:right; padding:9px">Alterar</button>
                                             </div>
                                         </div>
                                     </form>
@@ -124,25 +124,27 @@
                                 <div class="card">
                                     <div class="card-container">
                                       <h3 id="center"><b>Banco</b></h3>
-                                      <form>
-                                            <div class="form-carteira">
-                                                <label for="saldo">Nome do Banco: </label>
-                                                <input type="text" class="form-control" id="preco_servico" name="preco_servico" size="10" 
-											    value="" style="width:50%; display:inline" required> &nbsp; &nbsp; &nbsp;
-
-                                                <label for="saldo"> Id Caixa: </label>
-                                                <input type="text" class="form-control" id="id_caixa_b" name="id_caixa_b" size="10" value="" step="1" style="width:5%; display:inline" readonly> 
-                                                <p> &nbsp; </p>
-                                                <label for="saldo"> Número da Agência: </label>
-                                                <input type="text" class="form-control" id="num_agencia" name="num_agencia" size="10" value="" step="1" style="width:20%; display:inline"> 
-                                                 &nbsp; &nbsp; &nbsp;
-                                                
-                                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                                                <label class="form-check-label" for="invalidCheck2">
-                                                    Ativo
-                                                </label>
-
-                                                <button type="submit" class="btn btn-primary" style="display:inline; float:right; background:green; border: green; padding:9px; margin-bottom:15px">Salvar</button>
+                                      <form class="form-carteira">
+                                            <div class="card-container">
+                                                <div class="form-group row">
+                                                    <label for="saldo" class="col-sm-1 col-form-label">Nome do Banco: </label>
+                                                    <input type="text" class="form-control" id="preco_servico" name="preco_servico" size="10" 
+                                                    value="" style="width:50%; display:inline" required> &nbsp; &nbsp; &nbsp;
+                                                    <label for="saldo"> Id Caixa: </label>
+                                                    <input type="text" class="form-control" id="id_caixa_b" name="id_caixa_b" size="10" value="" step="1" style="width:5%; display:inline" readonly> 
+                                                    <p> &nbsp; </p>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="num_agencia" class="col-sm-1 col-form-label"> Número da Agência: </label>
+                                                    <input type="text" class="form-control" id="num_agencia" name="num_agencia" size="10" value="" step="1" style="width:20%; display:inline"> 
+                                                    &nbsp; &nbsp; &nbsp;
+                                                    
+                                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                                                    <label class="form-check-label" for="invalidCheck2">
+                                                        Ativo
+                                                    </label>
+                                                </div>
+                                                <button type="submit" class="btn btn-success bt-salvar" >Salvar</button>
                                             </div>
                                         </form>
                                     </div>
@@ -169,8 +171,8 @@
                                                     <label class="form-check-label" for="invalidCheck2">
                                                         Ativo
                                                     </label>
-                                                    <button type="submit" class="btn btn-primary" style="display:inline; float:right; background:red; border: #5f725f; padding:9px; margin-left:20px">Deletar</button>
-                                                    <button type="submit" class="btn btn-primary" style="display:inline; float:right; background:#5f725f; border: #5f725f; padding:9px">Alterar</button>
+                                                    <button type="submit" class="btn btn-danger" style="display:inline; float:right; padding:9px; margin-left:20px">Deletar</button>
+                                                    <button type="submit" class="btn btn-secondary" style="display:inline; float:right; padding:9px">Alterar</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -186,7 +188,7 @@
 
                                       <form>
                                             <div class="form-carteira">
-                                                <label for="num_conta">Número da Conta: </label>
+                                                <label for="num_conta" class="col-sm-1 col-form-label">Número da Conta: </label>
                                                 <input type="text" class="form-control" id="num_conta" name="num_conta" size="10" 
 											    value="" style="width:50%; display:inline" required> &nbsp; &nbsp; &nbsp;
 
@@ -194,33 +196,33 @@
                                                 <input type="text" class="form-control" id="id_caixa_c" name="id_caixa_c" size="10" value="" step="1" style="width:5%; display:inline" readonly> 
                                                 <p> &nbsp; </p>
                                                 <div class="form-group ">
-                                                    <label for="exampleFormControlSelect1">Banco: </label>
-                                                    <select class="form-control" id="exampleFormControlSelect1" style="width:90%; display:inline">
+                                                    <label for="banco_cad" class="col-sm-1 col-form-label">Banco: </label>
+                                                    <select class="form-control" id="banco_cad" style="width:86%; display:inline">
                                                         <option>Itau</option>
                                                         <option>Bradesco</option>
                                                     </select>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="exampleFormControlSelect2">Tipo de Conta: </label>
-                                                    <select class="form-control" id="exampleFormControlSelect2" style="width:86%; display:inline">
+                                                    <label for="tipo_conta" class="col-sm-1 col-form-label">Tipo de Conta: </label>
+                                                    <select class="form-control" id="tipo_conta" style="width:86%; display:inline">
                                                         <option>Conta Salário</option>
                                                         <option>Conta Corrente</option>
                                                         <option>Conta Poupança</option>  
                                                         <option>Conta Universitária</option>      
                                                     </select>
                                                 </div>
-                                                <label for="saldo_conta"> Saldo: </label>
+                                                <label for="saldo_conta" class="col-sm-1 col-form-label"> Saldo: </label>
                                                 <input type="number" class="form-control" id="saldo_conta" name="saldo_conta" size="10" value="" step="1" placeholder="1000,00" style="width:15%; display:inline"> 
 
                                                 &nbsp; &nbsp; &nbsp;
                                                 
-                                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                                                <label class="form-check-label" for="invalidCheck2">
+                                                <input class="form-check-input" type="checkbox" value="" id="conta-ativa" required>
+                                                <label class="form-check-label" for="conta-ativa">
                                                     Ativo
                                                 </label>
 
-                                                <button type="submit" class="btn btn-primary" style="display:inline; float:right; background:green; border: green; padding:9px; margin-bottom:15px">Salvar</button>
+                                                <button type="submit" class="btn btn-success bt-salvar" >Salvar</button>
                                             </div>
                                         </form>
 
@@ -240,16 +242,16 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="tipo_conta" class="col-sm-2 col-form-label">Tipo de Conta:  </label>
+                                                <label for="tipo-conta-c" class="col-sm-2 col-form-label">Tipo de Conta:  </label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" readonly class="form-control-plaintext readonlys" id="tipo_conta" value="Conta Salário">
+                                                    <input type="text" readonly class="form-control-plaintext readonlys" id="tipo-conta-c" value="Conta Salário">
                                                     
                                                     <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" disabled>
                                                     <label class="form-check-label" for="invalidCheck2">
                                                         Ativo
                                                     </label>
-                                                    <button type="submit" class="btn btn-primary" style="display:inline; float:right; background:red; border: #5f725f; padding:9px; margin-left:20px">Deletar</button>
-                                                    <button type="submit" class="btn btn-primary" style="display:inline; float:right; background:#5f725f; border: #5f725f; padding:9px">Alterar</button>
+                                                    <button type="submit" class="btn btn-danger" style="display:inline; float:right; padding:9px; margin-left:20px">Deletar</button>
+                                                    <button type="submit" class="btn btn-secondary" style="display:inline; float:right; padding:9px">Alterar</button>
                                                 </div>
 
                                                 <label for="num-conta-v" class="col-sm-2 col-form-label" id="label-num-conta">Banco e Agência: </label>
@@ -280,8 +282,8 @@
                                                     <label class="form-check-label" for="invalidCheck2">
                                                         Ativo
                                                     </label>
-                                                    <button type="submit" class="btn btn-primary" style="display:inline; float:right; background:red; border: #5f725f; padding:9px; margin-left:20px">Deletar</button>
-                                                    <button type="submit" class="btn btn-primary" style="display:inline; float:right; background:#5f725f; border: #5f725f; padding:9px">Alterar</button>
+                                                    <button type="submit" class="btn btn-danger" style="display:inline; float:right; padding:9px; margin-left:20px">Deletar</button>
+                                                    <button type="submit" class="btn btn-secondary" style="display:inline; float:right; padding:9px">Alterar</button>
                                                 </div>
 
                                                 <label for="num-conta-v" class="col-sm-2 col-form-label" id="label-num-conta">Banco e Agência: </label>
