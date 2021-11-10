@@ -1,7 +1,7 @@
 <?php
-include ("../Controladores/login_bd/login_banco.php");
-include_once ("../Controladores/CategoriaControlador.php");
-include_once ("../Controladores/SubcategoriaControlador.php");
+require_once ("../Controladores/login_bd/login_banco.php");
+require_once ("../Controladores/CategoriaControlador.php");
+require_once ("../Controladores/SubcategoriaControlador.php");
 ?>
 <!DOCTYPE html>
 <html>
