@@ -7,7 +7,7 @@
        $servername = "localhost";
        $username = "root";
        $password = "";
-       $dbname = "meufinanceiro"; //alterar caso necessário
+       $dbname = "sistema financeiro"; //alterar caso necessário
 
 	   $conn = new mysqli($servername, $username, $password, $dbname);
 

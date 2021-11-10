@@ -47,7 +47,7 @@
     }
 
     public static function deletarCategoria(Categoria $categoria){
-      include("../Controladores/login_bd/login_banco.php");
+      include ("../Controladores/login_bd/login_banco.php");
 
       $idCategoria = $categoria->getIdCategoria(); 
 

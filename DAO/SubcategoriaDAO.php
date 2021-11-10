@@ -33,7 +33,7 @@
         }
 
         public static function deletarSubcategoria(Subcategoria $subcategoria){
-            include("../Controladores/login_bd/login_banco.php");
+            include ("../Controladores/login_bd/login_banco.php");
       
             $idSubcategoria = $subcategoria->getIdSubcategoria(); 
 
