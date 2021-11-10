@@ -20,7 +20,7 @@
 
 				<div class="col-6" id="col-cadastro">
 					<h1>Cadastro</h1>
-					<a href="index.php" id="link-login">Já possuí uma conta? Faça o login.</a>
+					<a href="index.php" id="link-login">Já possui uma conta? Faça o login.</a>
 			    </div>
 
 				<div class="col-3 col-lados">	
