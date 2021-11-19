@@ -26,3 +26,17 @@ ALTER TABLE `sub_categoria`
 ADD CONSTRAINT fk_id_usuario_sub_categ
 FOREIGN KEY (id_usuario) REFERENCES `usuario`(id_usuario);
 -------------------------------------------------------------------------------------------------------------------------------
+--Tipo Conta será nulo quando usuario cadastrar saldo na Carteira
+ALTER TABLE `caixa` 
+CHANGE COLUMN `tipoconta` `tipoconta` VARCHAR(1) NULL ;
+------------------
+ALTER TABLE `caixa` 
+ADD COLUMN `tipocaixa` VARCHAR(1) NOT NULL 
+COMMENT 'Tipo de Caixa (A - Carteira, C- Conta Bancária)' AFTER `id_banco`;
+------------------
+--Cadastro de caixa de tipo Carteira informa erro por não encontrar fk
+ALTER TABLE `caixa` 
+DROP FOREIGN KEY `fk_id_banco`;
+ALTER TABLE `caixa` 
+DROP INDEX `fk_id_banco` ;
+;

@@ -47,6 +47,20 @@ function buscarCategorias($id_usuario){
                     echo 'Categoria deletada com sucesso!';
                 }
                 break;
+            case 'BuscarPeloId':
+                $categoria = new Categoria();
+
+                $categoria->setIdCategoria($_POST['idCategoria']);
+                $categoriaDAO = new CategoriaDAO();
+
+                $categoria = $categoriaDAO->buscarCategoriaById($categoria);
+                
+                $nomeCategoria = $categoria->getNomeCategoria();
+                $tipoCategoria = $categoria->getTipoDeCategoria();
+                $idCategoria = $categoria->getIdCategoria(); 
+        
+                echo $idCategoria.",".$tipoCategoria.",".$nomeCategoria;
+                break;
             }
     }
 ?>
