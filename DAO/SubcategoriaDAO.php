@@ -50,6 +50,42 @@
             }
           }
 
+        public static function alterarSubcategoria(Subcategoria $subcategoria){
+            include ("../Controladores/login_bd/login_banco.php");
+            $nomeSubcategoria = $subcategoria->getNomeSubcategoria(); 
+            $idCategoria = $subcategoria->getIdCategoria();
+            $idUsuario = $subcategoria->getIdUsuario();
+            $idSubcategoria = $subcategoria->getIdSubcategoria(); 
+            $ativo = 1;
+
+            $sql = "UPDATE sub_categoria 
+                    SET id_categoria = '$idCategoria', nome_sub_categoria  = '$nomeSubcategoria', ativo = '$ativo'
+                    WHERE id_sub_categoria = $idSubcategoria,
+                    AND   id_usuario       = '$idUsuario'";
+        
+            $conn->query($sql);
+        
+            $conn->close();
+        }
+        
+        public function buscarSubcategoriaById(Subcategoria $subcategoria){
+            include ("../Controladores/login_bd/login_banco.php");
+
+            $idSubcategoria = $subcategoria->getIdSubcategoria();
+            
+            $sql = "SELECT * FROM sub_categoria WHERE id_sub_categoria = '$idSubcategoria'"; 
+            
+            $resultado = $conn->query($sql) or die($conn->error);
+			$row = $resultado->fetch_assoc();
+            
+            $subcategoria->setIdSubcategoria($row['id_sub_categoria']);
+            $subcategoria->setIdCategoria($row['id_categoria']);
+            $subcategoria->setNomeSubcategoria($row['nome_sub_categoria']);
+            $conn->close();
+            
+            return $subcategoria;
+        }
+
         public function buscarSubcategorias($idUsuario){
             include ("../Controladores/login_bd/login_banco.php");
         

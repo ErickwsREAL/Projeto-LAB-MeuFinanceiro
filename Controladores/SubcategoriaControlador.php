@@ -48,5 +48,19 @@ if (isset($_GET['metodo'])) {
                 echo 'Subcategoria deletada com sucesso!';
             }
             break;
-        }
+        case 'BuscarPeloId':
+            $subcategoria = new Subcategoria();
+
+            $subcategoria->setIdSubcategoria($_POST['idSubcategoria']);
+            $subcategoriaDAO = new SubcategoriaDAO();
+
+            $subcategoria = $subcategoriaDAO->buscarSubcategoriaById($subcategoria);
+            
+            $nomeSubcategoria = $subcategoria->getNomeSubcategoria();
+            $idCategoria = $subcategoria->getIdCategoria();
+            $idSubcategoria = $subcategoria->getIdSubcategoria(); 
+    
+            echo $idSubcategoria.",".$idCategoria.",".$nomeSubcategoria;
+            break;
+    }
 }

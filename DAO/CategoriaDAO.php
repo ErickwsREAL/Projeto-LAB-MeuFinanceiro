@@ -76,17 +76,36 @@
       }
     }
 
+    public function buscarCategoriaById(Categoria $categoria){
+      include ("../Controladores/login_bd/login_banco.php");
+      $idCategoria = $categoria->getIdCategoria();
+      
+      $sql = "SELECT * FROM categoria WHERE id_categoria = $idCategoria"; 
+      
+      $resultado = $conn->query($sql);
+      $row = $resultado->fetch_assoc();
+
+      $categoria->setIdCategoria($row['id_categoria']);
+			$categoria->setNomeCategoria($row['nomecategoria']);
+			$categoria->setTipoDeCategoria($row['tipo_categoria']);
+
+      $conn->close();
+      return $categoria;
+    }
+
     public static function alterarCategoria(Categoria $categoria){
       include ("../Controladores/login_bd/login_banco.php");
 
       $nomeCategoria = $categoria->getNomeCategoria(); 
       $tipoCategoria = $categoria->getTipoDeCategoria();
       $idUsuario = $categoria->getIdUsuario();
+      $idCategoria = $categoria->getIdCategoria();
 
       $sql = "UPDATE categoria 
-              SET nomecategoria = '$data_servico', 
-                  tipo_categoria  = $id_endereco, 
-              WHERE id_categoria = $id_servico";
+              SET nomecategoria = '$nomeCategoria', 
+                  tipo_categoria  = $tipoCategoria, 
+              WHERE id_categoria = $idCategoria,
+              AND   id_usuario = '$idUsuario'";
 
       $conn->query($sql);
 

@@ -98,8 +98,9 @@ require_once ("../Controladores/SubcategoriaControlador.php");
                                                     <div class="form-group" >
                                                         <label for="tipo_categoria" class="col-sm-1 col-form-label">Tipo: </label>
                                                         <select class="form-control" id="tipo_categoria" name="tipo_categoria" style="width:50%; display:inline">
-                                                            <option value="E">Entrada de Dinheiro</option>
-                                                            <option value="S">Saída de Dinheiro</option>    
+                                                            <option value="A">Ambos</option>
+                                                            <option value="E">Entrada</option>
+                                                            <option value="S">Despesa</option>    
                                                         </select>
                                                         &nbsp; &nbsp;
                                                         <label for="id_categoria"> Id Categoria: </label>
@@ -134,10 +135,10 @@ require_once ("../Controladores/SubcategoriaControlador.php");
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="tipo_categoria_c" class="col-sm-2 col-form-label">Tipo:  </label>
-                                                    <input type="text" readonly class="form-control-plaintext readonlys" id="tipo_categoria_c" value="<?php if ($row["tipo_categoria"] == "E") echo "Entrada"; else echo "Saída";?>">
+                                                    <input type="text" readonly class="form-control-plaintext readonlys" id="tipo_categoria_c" value="<?php if ($row["tipo_categoria"] == "E") echo "Entrada"; else echo "Despesa";?>">
                                                 
                                                     <button type="button" class="btn btn-danger bt-deletar-s" id="deletarCategoria-<?php echo $row["id_categoria"];?>" onClick="excluirCategoria(this.id)">Deletar</button>
-                                                    <button type="button" class="btn btn-secondary bt-alterar-s" id="alterarCategoria">Alterar</button>
+                                                    <button type="button" class="btn btn-secondary bt-alterar-s" id="alterarCategoria" onClick="buscarCategoriaPeloId(<?php echo $row["id_categoria"];?>)">Alterar</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -210,7 +211,7 @@ require_once ("../Controladores/SubcategoriaControlador.php");
                                                         <input type="text" readonly class="form-control-plaintext readonlys" id="categoria_sub_c" value="<?php echo $row["id_categoria"]; ?>">
                                                     
                                                         <button type="button" class="btn btn-danger bt-deletar-s" id="deletarSubcategoria-<?php echo $row["id_sub_categoria"];?>" onclick="excluirSubcategoria(this.id)">Deletar</button>
-                                                        <button type="button" class="btn btn-secondary bt-alterar-s">Alterar</button>
+                                                        <button type="button" class="btn btn-secondary bt-alterar-s" onClick="buscarSubcategoriaPeloId(<?php echo $row["id_sub_categoria"];?>)">Alterar</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -326,6 +327,41 @@ require_once ("../Controladores/SubcategoriaControlador.php");
                 }
             });
         }
+    }
+
+    function buscarCategoriaPeloId(idCategoria){
+        event.preventDefault();
+        $.ajax({
+            url: '../Controladores/CategoriaControlador.php?metodo=BuscarPeloId',
+            type: "POST",
+            dataType :"html",
+            data: {'idCategoria': idCategoria},
+            
+            success: function(value){
+                var data = value.split(",");
+                $('#id_categoria').val(data[0]);
+                $('#tipo_categoria').val(data[1]);
+                $('#nome_categoria').val(data[2]);
+            }
+        });
+    }
+
+    function buscarSubcategoriaPeloId(idSubcategoria){
+        alert(idSubcategoria);
+        event.preventDefault();
+        $.ajax({
+            url: '../Controladores/SubcategoriaControlador.php?metodo=BuscarPeloId',
+            type: "POST",
+            dataType :"html",
+            data: {'idSubcategoria': idSubcategoria},
+            
+            success: function(value){
+                var data = value.split(",");
+                $('#id_subcategoria').val(data[0]);
+                $('#id_categoria_sub').val(data[1]);
+                $('#nome_subcategoria').val(data[2]);
+            }
+        });
     }
 
     /*Funcionamento Abas */
