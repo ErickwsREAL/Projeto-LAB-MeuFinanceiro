@@ -19,15 +19,15 @@
 			<div class="row">
 				<div class="col-4" id="col-login">
 					<h3>Log in</h3>
-					<form>
+					<form action="../Controladores/login_usuario/logar_sistema.php" method="POST">
 						<div class="form-group form-login-label" id="form-email">
 					    	<label for="EmailUsuario">E-mail</label>
-					    	<input type="email" class="form-control" id="EmailUsuario" placeholder="Escreva seu e-mail...">
+					    	<input type="email" class="form-control" id="EmailUsuario" name="email" placeholder="Escreva seu e-mail..."required>
 					  	</div>
 					  	
 					  	<div class="form-group form-login-label teste" id="form-senha">
 					    	<label for="SenhaUsuario">Senha</label>
-					    	<input type="password" class="form-control" id="SenhaUsuario" placeholder="Escreva seu senha...">
+					    	<input type="password" class="form-control" id="SenhaUsuario" name="senha" placeholder="Escreva seu senha..." required>
 					  	</div>
 					  	<button id="btentrar" type="submit" class="btn btn-primary">Entrar</button>
 					</form>
