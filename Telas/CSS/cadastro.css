@@ -42,3 +42,24 @@
     color: #0046EC;
     margin-left: 250px;
 }
+
+#btsalvar {
+    width: 100px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    margin-left: 312px;
+    background-color: #2DA500; 
+    border-color: #2B9E00;
+    box-shadow: 1px 1px 1px grey;
+}
+
+.cadastroinput {
+    width: 400px;
+    margin-left: 160px;
+}
+
+#col-cadastro label {
+    margin-left: 160px;
+    color: white;
+    font-size: 20px;
+}

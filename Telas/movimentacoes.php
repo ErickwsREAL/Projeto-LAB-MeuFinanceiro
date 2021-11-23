@@ -1,3 +1,6 @@
+<?php 
+include_once ("../Controladores/login_usuario/verificar_login.php");
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,6 +18,10 @@
     </head>
 
     <body>
+        <?php
+            $id_usu   = $_SESSION['usuario']['id_usuario'];
+            $nome_usu = $_SESSION['usuario']['nome'];   
+        ?>
         <div class="d-flex wrapper wrapper-navbar-used wrapper-navbar-fixed">
             <!-- Sidebar Holder -->
             <nav id="sidebar">
@@ -22,7 +29,7 @@
                     <h3>Meu Financeiro</h3>
                 </div>
                 <ul class="list-unstyled components">
-                    <p>Usuário: Blá</p>
+                    <p>Usuário: <?php echo $nome_usu ?></p>
                     <li>
                         <a href="./categoria_subcategoria.php">Categorias e Subcategorias</a>
                     </li>
@@ -46,7 +53,7 @@
                     </li>
                 </ul>
                 <ul class="list-unstyled CTAs">
-                    <li><a href="" class="sair" id="sair-botao">Sair</a></li>
+                    <li><a href="../Controladores/login_usuario/sair.php" class="sair" id="sair-botao">Sair</a></li>
                 </ul>
             </nav>
             <!-- Page Content Holder -->

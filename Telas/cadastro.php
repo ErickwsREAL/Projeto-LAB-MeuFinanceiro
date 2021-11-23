@@ -20,6 +20,29 @@
 
 				<div class="col-6" id="col-cadastro">
 					<h1>Cadastro</h1>
+					<form action="../Controladores/UsuarioControlador.php?metodo=Inserir" method="POST">
+						<div class="form-group">
+							<br><label for="CadastroNome">Nome</label>
+							<input type="text" class="form-control cadastroinput" id="CadastroNome" name="nome" minlength="3" maxlength="50" placeholder="Apenas letras..." required>
+			  			</div>
+
+						<div class="form-group">
+						    <label for="CadastroDataNasc">Data de nascimento</label>
+						    <input type="date" class="form-control cadastroinput" id="CadastroDataNasc" name="data_nascimento" min="1930-01-01" required>
+		 				</div>
+
+						<div class="form-group" id="form-email">
+					    	<label for="CadastroEmail">E-mail</label>
+					    	<input type="email" class="form-control cadastroinput" id="CadastroEmail" name='email' placeholder="Escreva seu e-mail..." required> 
+					  	</div>
+
+					  	<div class="form-group " id="form-senha">
+					    	<label for="CadastroSenha">Senha</label>
+					    	<input type="password" class="form-control cadastroinput" id="CadastroSenha" name='senha' min="8" placeholder="Escreva seu senha..." required>
+					  	</div>
+					  	
+					  	<button id="btsalvar" type="submit" class="btn btn-primary">Salvar</button>
+					</form>
 					<a href="index.php" id="link-login">Já possuí uma conta? Faça o login.</a>
 			    </div>
 
